@@ -11,7 +11,7 @@ import CoreData
 
 class MarvelVDCViewController: UIViewController {
     
-    var universeArray = [Universe]()
+    var MultiVerse = [Universe]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
