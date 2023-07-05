@@ -11,13 +11,14 @@ import CoreData
 
 class MarvelVDCViewController: UIViewController {
     
-    //commit test 3
+    //commit test 4
     var MultiVerse = [Universe]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
         print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        print("testing")
     }
 
 
