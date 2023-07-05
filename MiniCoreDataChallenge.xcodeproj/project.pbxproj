@@ -11,7 +11,7 @@
 		409CCC522A52F00E00F74AE8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CCC512A52F00E00F74AE8 /* SceneDelegate.swift */; };
 		409CCC542A52F00E00F74AE8 /* MarvelVDCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 409CCC532A52F00E00F74AE8 /* MarvelVDCViewController.swift */; };
 		409CCC572A52F00E00F74AE8 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409CCC552A52F00E00F74AE8 /* Main.storyboard */; };
-		409CCC5A2A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 409CCC582A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodeld */; };
+		409CCC5A2A52F00E00F74AE8 /* DataModel.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 409CCC582A52F00E00F74AE8 /* DataModel.xcdatamodeld */; };
 		409CCC5C2A52F01000F74AE8 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 409CCC5B2A52F01000F74AE8 /* Assets.xcassets */; };
 		409CCC5F2A52F01000F74AE8 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 409CCC5D2A52F01000F74AE8 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -89,7 +89,7 @@
 		409CCC682A545E4600F74AE8 /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				409CCC582A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodeld */,
+				409CCC582A52F00E00F74AE8 /* DataModel.xcdatamodeld */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -166,7 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				409CCC542A52F00E00F74AE8 /* MarvelVDCViewController.swift in Sources */,
-				409CCC5A2A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodeld in Sources */,
+				409CCC5A2A52F00E00F74AE8 /* DataModel.xcdatamodeld in Sources */,
 				409CCC502A52F00E00F74AE8 /* AppDelegate.swift in Sources */,
 				409CCC522A52F00E00F74AE8 /* SceneDelegate.swift in Sources */,
 			);
@@ -388,13 +388,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		409CCC582A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodeld */ = {
+		409CCC582A52F00E00F74AE8 /* DataModel.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
 				409CCC592A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodel */,
 			);
 			currentVersion = 409CCC592A52F00E00F74AE8 /* MiniCoreDataChallenge.xcdatamodel */;
-			path = MiniCoreDataChallenge.xcdatamodeld;
+			path = DataModel.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};
