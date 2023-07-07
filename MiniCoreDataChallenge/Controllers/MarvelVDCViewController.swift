@@ -11,7 +11,7 @@ import CoreData
 
 class MarvelVDCViewController: UITableViewController {
     
-    var MultiVerse = [Universe]()
+    var multiverseArray = [Universe]()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
@@ -29,13 +29,14 @@ class MarvelVDCViewController: UITableViewController {
 // MARK: - DataSource Methods
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return multiverseArray.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UniverseCell", for: indexPath)
+        let universe = multiverseArray[indexPath.row]
         
-        cell.textLabel?.text = "testing10"
+        cell.textLabel?.text = universe.name
         
         return cell
     }
@@ -45,9 +46,38 @@ class MarvelVDCViewController: UITableViewController {
 // MARK: - Data Maniulation Methods
     //save and load
     
+    func saveMultiverse() {
+        do {
+            try context.save()
+        } catch {
+            print("error saving Universe: \(error)")
+        }
+        tableView.reloadData()
+        
+    }
+    
 // MARK: - Add new items
 
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
+        var textField = UITextField()
+        
+        let alert = UIAlertController(title: "Add New Universe", message: "", preferredStyle: .alert)
+        
+        let action = UIAlertAction(title: "Add Universe", style: .default) { _ in
+            let newUniverse = Universe(context: self.context)
+            
+            newUniverse.name = textField.text
+            self.multiverseArray.append(newUniverse)
+            self.saveMultiverse()
+        }
+        
+        alert.addTextField(configurationHandler: { alertTextField in
+            alertTextField.placeholder = "Add a new universe"
+            textField = alertTextField
+        })
+        
+        alert.addAction(action)
+        present(alert, animated: true, completion: nil)
         
     }
 }
