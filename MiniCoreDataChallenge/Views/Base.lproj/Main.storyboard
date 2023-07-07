@@ -10,7 +10,7 @@
         <!--Select Universe-->
         <scene sceneID="rVl-iP-lF0">
             <objects>
-                <tableViewController id="KGE-fX-GOY" sceneMemberID="viewController">
+                <tableViewController id="KGE-fX-GOY" customClass="MarvelVDCViewController" customModule="MiniCoreDataChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="MO3-xW-6jK">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -30,7 +30,14 @@
                             <outlet property="delegate" destination="KGE-fX-GOY" id="9nn-F2-VHn"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Select Universe" id="1Vw-Ku-8iW"/>
+                    <navigationItem key="navigationItem" title="Select Universe" id="1Vw-Ku-8iW">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Kkh-eh-K5h">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="KGE-fX-GOY" id="VME-G5-GFv"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4La-b1-5Wq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
