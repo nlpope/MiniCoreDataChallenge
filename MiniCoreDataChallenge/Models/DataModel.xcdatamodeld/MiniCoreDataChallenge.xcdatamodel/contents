@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21279" systemVersion="21G115" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Hero" representedClassName="Hero" syncable="YES" codeGenerationType="class">
+        <attribute name="abilities" optional="YES" attributeType="String"/>
+        <attribute name="debutDate" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="homeBase" optional="YES" attributeType="String"/>
+        <attribute name="identity" optional="YES" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="universe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Universe" inverseName="hero" inverseEntity="Universe"/>
+    </entity>
     <entity name="Universe" representedClassName="Universe" syncable="YES" codeGenerationType="class">
         <attribute name="dateFounded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
+        <relationship name="hero" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hero" inverseName="universe" inverseEntity="Hero"/>
     </entity>
 </model>

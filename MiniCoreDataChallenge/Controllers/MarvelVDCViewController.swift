@@ -3,7 +3,7 @@
 //  MiniCoreDataChallenge
 //
 //  Created by Noah Pope on 7/3/23.
-//
+// MAKE ONE MORE PLAIN VC FOR THE HERO DETAILS TO POP UP IN AN EDITABLE MODAL?
 
 import UIKit
 import CoreData
