@@ -24,6 +24,8 @@ class MarvelVDCViewController: UITableViewController {
         appearance.titleTextAttributes = [.foregroundColor: UIColor.white]
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
+        
+        loadMultiverse()
     }
     
 // MARK: - DataSource Methods
@@ -42,6 +44,15 @@ class MarvelVDCViewController: UITableViewController {
     }
     
 // MARK: - Delegate Methods
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        performSegue(withIdentifier: "goToCharacters", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    }
 
 // MARK: - Data Maniulation Methods
     //save and load
@@ -52,6 +63,17 @@ class MarvelVDCViewController: UITableViewController {
         } catch {
             print("error saving Universe: \(error)")
         }
+        tableView.reloadData()
+        
+    }
+    
+    func loadMultiverse(with request: NSFetchRequest<Universe> = Universe.fetchRequest()) {
+        do {
+            multiverseArray = try context.fetch(request)
+        } catch {
+            print("error loading multiverse: \(error)")
+        }
+        
         tableView.reloadData()
         
     }
