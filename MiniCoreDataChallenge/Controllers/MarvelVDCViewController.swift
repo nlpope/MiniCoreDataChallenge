@@ -3,7 +3,7 @@
 //  MiniCoreDataChallenge
 //
 //  Created by Noah Pope on 7/3/23.
-// MAKE ONE MORE PLAIN VC FOR THE HERO DETAILS TO POP UP IN AN EDITABLE MODAL?
+// MAKE ONE MORE PLAIN VC FOR THE HERO DETAILS TO POP UP IN AN nonEDITABLE MODAL?
 
 import UIKit
 import CoreData
@@ -55,7 +55,6 @@ class MarvelVDCViewController: UITableViewController {
     }
 
 // MARK: - Data Maniulation Methods
-    //save and load
     
     func saveMultiverse() {
         do {

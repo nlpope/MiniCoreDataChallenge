@@ -46,10 +46,10 @@
             </objects>
             <point key="canvasLocation" x="-81" y="82"/>
         </scene>
-        <!--Table View Controller-->
+        <!--Hero Tracker View Controller-->
         <scene sceneID="GLf-Cg-lZD">
             <objects>
-                <tableViewController id="Xoh-zg-fLO" sceneMemberID="viewController">
+                <tableViewController id="Xoh-zg-fLO" customClass="HeroTrackerViewController" customModule="MiniCoreDataChallenge" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="kgR-1P-pgM">
                         <rect key="frame" x="0.0" y="0.0" width="390" height="844"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -75,7 +75,14 @@
                             <outlet property="delegate" destination="Xoh-zg-fLO" id="erg-CK-VmQ"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="vKi-FA-Eis"/>
+                    <navigationItem key="navigationItem" id="vKi-FA-Eis">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="qxz-eP-5RY">
+                            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <connections>
+                                <action selector="addButtonPressed:" destination="Xoh-zg-fLO" id="34o-Z9-5CG"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="qRE-LP-Ywe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
