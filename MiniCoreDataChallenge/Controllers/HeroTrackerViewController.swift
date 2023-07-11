@@ -31,6 +31,8 @@ class HeroTrackerViewController: UITableViewController {
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         
+        loadHeroes()
+        
     }
     
     //MARK: - TableView DataSource Methods
