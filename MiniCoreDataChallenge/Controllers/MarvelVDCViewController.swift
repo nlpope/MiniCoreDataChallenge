@@ -3,8 +3,10 @@
 //  MiniCoreDataChallenge
 //
 //  Created by Noah Pope on 7/3/23.
-// MAKE ONE MORE PLAIN VC FOR THE HERO DETAILS TO POP UP IN AN nonEDITABLE MODAL?
-// FIND A WAY TO EXPAND CELL SIZE BASED ON CONTENTS - SEE NETFLIX CLONE MK 1
+
+// "if let indexPath = tableView.indexPathForSelectedRow" not working for some reason
+// (later) set up model for non editable modal on hero selection
+// (later) FIND A WAY TO EXPAND CELL SIZE BASED ON CONTENTS - SEE NETFLIX CLONE
 
 import UIKit
 import CoreData
@@ -48,11 +50,16 @@ class MarvelVDCViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        performSegue(withIdentifier: "goToCharacters", sender: self)
+        performSegue(withIdentifier: "goToHeroes", sender: self)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
+        let destinationVC = segue.destination as! HeroTrackerViewController
+        if let indexPath = tableView.indexPathForSelectedRow {
+            print(indexPath)
+            destinationVC.selectedUniverse = multiverseArray[indexPath.row]
+            print(destinationVC.selectedUniverse)
+        } else { print("problems setting indexPath") }
     }
 
 // MARK: - Data Maniulation Methods

@@ -4,11 +4,11 @@
         <attribute name="activeAgent" attributeType="Boolean" usesScalarValueType="YES"/>
         <attribute name="identity" optional="YES" attributeType="String"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="universe" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Universe" inverseName="hero" inverseEntity="Universe"/>
+        <relationship name="parentUniverse" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Universe" inverseName="hero" inverseEntity="Universe"/>
     </entity>
     <entity name="Universe" representedClassName="Universe" syncable="YES" codeGenerationType="class">
         <attribute name="dateFounded" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="name" attributeType="String"/>
-        <relationship name="hero" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hero" inverseName="universe" inverseEntity="Hero"/>
+        <relationship name="hero" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="Hero" inverseName="parentUniverse" inverseEntity="Hero"/>
     </entity>
 </model>

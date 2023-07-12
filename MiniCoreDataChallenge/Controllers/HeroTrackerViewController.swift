@@ -31,6 +31,7 @@ class HeroTrackerViewController: UITableViewController {
         navigationItem.standardAppearance = appearance
         navigationItem.scrollEdgeAppearance = appearance
         
+        
         loadHeroes()
         
     }
@@ -72,6 +73,12 @@ class HeroTrackerViewController: UITableViewController {
     }
     
     func loadHeroes(with request: NSFetchRequest<Hero> = Hero.fetchRequest()) {
+        
+        if request == Hero.fetchRequest() {
+            let predicate = NSPredicate(format: "parentUniverse.name MATCHES %@", selectedUniverse!.name!)
+            request.predicate = predicate
+        }
+        
         do {
             heroArray = try context.fetch(request)
         } catch {
