@@ -11,6 +11,7 @@ import CoreData
 
 class HeroTrackerViewController: UITableViewController {
     var heroArray = [Hero]()
+    // TODO: - Segue working, get hero cells to persist btwn universe loads
     var selectedUniverse: Universe? {
         didSet {
             loadHeroes()
