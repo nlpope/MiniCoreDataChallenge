@@ -99,7 +99,7 @@ class HeroTrackerViewController: UITableViewController {
         let action = UIAlertAction(title: "Add Hero", style: .default) { _ in
             let newHero = Hero(context: self.context)
             newHero.name = heroNameTextField.text
-            newHero.identity = heroIDTextField.text ?? "unKnown"
+            newHero.identity = heroIDTextField.text != "" ? heroIDTextField.text : "unknown"
             newHero.activeAgent = false
             newHero.parentUniverse = self.selectedUniverse
             
