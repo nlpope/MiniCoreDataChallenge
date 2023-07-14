@@ -56,6 +56,7 @@ class MarvelVDCViewController: UITableViewController {
         let destinationVC = segue.destination as! HeroTrackerViewController
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.selectedUniverse = multiverseArray[indexPath.row]
+            destinationVC.title = destinationVC.selectedUniverse?.name
         } else { print("problems setting indexPath") }
     }
 
