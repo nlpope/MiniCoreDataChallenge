@@ -48,17 +48,13 @@ class MarvelVDCViewController: UITableViewController {
 // MARK: - Delegate Methods
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print(tableView.indexPathForSelectedRow)
 //        tableView.deselectRow(at: indexPath, animated: true)
         performSegue(withIdentifier: "goToHeroes", sender: self)
     }
     
-    // TODO: - get indexPath to stop producing nil for optional bind
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        print(tableView.indexPathForSelectedRow!)
         let destinationVC = segue.destination as! HeroTrackerViewController
         if let indexPath = tableView.indexPathForSelectedRow {
-            print("IT WORKED!!!")
             destinationVC.selectedUniverse = multiverseArray[indexPath.row]
         } else { print("problems setting indexPath") }
     }

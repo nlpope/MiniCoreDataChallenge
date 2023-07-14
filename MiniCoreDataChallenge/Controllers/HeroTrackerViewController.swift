@@ -15,6 +15,7 @@ class HeroTrackerViewController: UITableViewController {
     var selectedUniverse: Universe? {
         didSet {
             loadHeroes()
+            print(selectedUniverse!.name!)
         }
     }
     
@@ -48,9 +49,7 @@ class HeroTrackerViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "HeroCell", for: indexPath)
         let hero = heroArray[indexPath.row]
         
-        cell.textLabel?.text = "Hero: \(hero.name!), Identity: " + {
-            hero.identity ?? "unknown"
-        }()
+        cell.textLabel?.text = "Hero: \(hero.name!), Identity: \(hero.identity!)"
         cell.detailTextLabel?.text = hero.activeAgent ? "Active" : "Inactive"
         cell.imageView?.image = heroImage
         return cell
@@ -89,7 +88,8 @@ class HeroTrackerViewController: UITableViewController {
         tableView.reloadData()
     }
     // MARK: - Add new items
-    
+    // TODO: - get newHero.identity to pass "unknown" if nil to cellforrowat above
+
     @IBAction func addButtonPressed(_ sender: UIBarButtonItem) {
         
         var heroNameTextField = UITextField()
@@ -101,6 +101,7 @@ class HeroTrackerViewController: UITableViewController {
             newHero.name = heroNameTextField.text
             newHero.identity = heroIDTextField.text ?? "unKnown"
             newHero.activeAgent = false
+            newHero.parentUniverse = self.selectedUniverse
             
             self.heroArray.append(newHero)
             self.saveHeroes()
