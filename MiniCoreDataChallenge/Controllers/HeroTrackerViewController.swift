@@ -11,7 +11,6 @@ import CoreData
 
 class HeroTrackerViewController: UITableViewController {
     var heroArray = [Hero]()
-    // TODO: - Segue working, get hero cells to persist btwn universe loads
     var selectedUniverse: Universe? {
         didSet {
             loadHeroes()
@@ -60,8 +59,16 @@ class HeroTrackerViewController: UITableViewController {
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
-    // MARK: - Data Maniulation Methods
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            context.delete(heroArray[indexPath.row])
+            heroArray.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+            saveHeroes()
+        }
+    }
     
+    // MARK: - Data Maniulation Methods
     func saveHeroes() {
         do {
             try context.save()
