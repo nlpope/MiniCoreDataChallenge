@@ -3,6 +3,7 @@
 //  MiniCoreDataChallenge
 //
 //  Created by Noah Pope on 7/3/23.
+//  researching realm w stewart lynch
 
 // "if let indexPath = tableView.indexPathForSelectedRow" not working for some reason
 // (later) set up model for non editable modal on hero selection
