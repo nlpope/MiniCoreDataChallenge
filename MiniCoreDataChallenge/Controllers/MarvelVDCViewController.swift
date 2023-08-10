@@ -5,9 +5,18 @@
 //  Created by Noah Pope on 7/3/23.
 //  researching realm w stewart lynch
 
-// "if let indexPath = tableView.indexPathForSelectedRow" not working for some reason
-// (later) set up model for non editable modal on hero selection
-// (later) FIND A WAY TO EXPAND CELL SIZE BASED ON CONTENTS - SEE NETFLIX CLONE
+
+
+/**
+ --------------------------
+ NOTES:
+ "if let indexPath = tableView.indexPathForSelectedRow" not working for some reason
+ (later) set up model for non editable modal on hero selection
+ (later) FIND A WAY TO EXPAND CELL SIZE BASED ON CONTENTS - SEE NETFLIX CLONE
+ --------------------------
+ UPDATES & QUESTIONS:
+ brushing up on binding
+ */
 
 import UIKit
 import CoreData
