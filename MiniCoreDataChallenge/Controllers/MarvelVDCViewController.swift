@@ -15,7 +15,7 @@
  (later) FIND A WAY TO EXPAND CELL SIZE BASED ON CONTENTS - SEE NETFLIX CLONE
  --------------------------
  UPDATES & QUESTIONS:
- brushing up on binding day 2
+ brushing up on binding day 3
  */
 
 import UIKit
